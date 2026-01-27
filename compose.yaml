@@ -8,13 +8,14 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  server:
+  apache:
     build:
       context: .
     ports:
       - 8000:80
     volumes:
-      - ./src:/usr/local/apache2/htdocs
+      # - ./src:/usr/local/apache2/htdocs
+      - ./src:/var/www/html
 
   mysql:
     image: mysql:latest
@@ -23,8 +24,8 @@ services:
       MYSQL_ROOT_PASSWORD: pw
     volumes:
       - mysql_data:/var/lib/mysql
-    ports:
-      - 3306:3306
+    # ports:
+    #   - 3306:3306
   
   phpmyadmin:
     image: phpmyadmin:latest
