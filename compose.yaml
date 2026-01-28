@@ -38,6 +38,11 @@ services:
     depends_on:
       - mysql
 
+  composer:
+    image: composer:latest
+    volumes:
+      - ./src:/var/www/html
+
 volumes:
   mysql_data:
 

@@ -17,12 +17,12 @@ FROM php:8.3-apache
 
 # Get docker PHP Extension Installer
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-
 # Install required libraries
 # RUN docker-php-ext-install mysqli
 RUN install-php-extensions \
-    mysqli \
-    composer:2.9.4
+    mysqli
+
+# RUN composer require twig/twig
 
 # Your PHP application may require additional PHP extensions to be installed
 # manually. For detailed instructions for installing extensions can be found, see
