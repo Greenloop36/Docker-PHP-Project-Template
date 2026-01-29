@@ -1,7 +1,6 @@
 <?php
 
 error_reporting(E_ALL);
-echo __FILE__;
 include "../private/core.php";
 include "$path/private/modules/database/table.php";
 echo __FILE__;
@@ -12,7 +11,9 @@ $result = $table -> create([
     'last_name' => 'Doe'
 ]);
 
-echo $result;
+// echo $result;
+echo "<h1>hi</h1>";
+echo bin2hex(random_bytes(32));
 
 phpinfo();
 
